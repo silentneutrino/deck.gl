@@ -23,9 +23,9 @@ export default class UniformTransitionManager {
     if (transitions.has(key)) {
       const transition = transitions.get(key);
       // value may not be available if `update()` has not been called. Fallback to `fromValue`
-      const {value = transition.settings.fromValue} = transition;
+      const {value = transition.settings.toValue} = transition;
       // start from interrupted position
-      fromValue = value;
+      toValue = value;
       this.remove(key);
     }
 
